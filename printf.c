@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int i, count, d;
-	char *str;
+	char *str, *s;
 
 	count = 0;
 	str = (char *)format;
@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			if (i != '\0')
-				switch(i)
+				switch (i)
 				{
 					case 'c':
 						{
@@ -34,6 +34,12 @@ int _printf(const char *format, ...)
 							putchar(d);
 							count++;
 							break;
+						}
+					case 's':
+						{
+							s = va_arg(args, char *);
+							puts(s);
+							count += strlen(s);
 						}
 					default:
 						{
