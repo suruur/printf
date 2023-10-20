@@ -1,5 +1,6 @@
 #include <stdarg.h>
-#include "string.h"
+#include <string.h>
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -13,10 +14,40 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int i, count, d;
+	char *str;
 
 	count = 0;
+	str = (char *)format;
 	va_start(args, format);
 
+	for (i = 0; str[i] != 0; i++)
+	{
+		if (str[i] == '%')
+		{
+			i++;
+			if (i != '\0')
+				switch(i)
+				{
+					case 'c':
+						{
+							d = va_arg(args, int);
+							putchar(d);
+							count++;
+							break;
+						}
+					default:
+						{
+							putchar(str[i]);
+							count++;
+						}
+				}
+		}
+		else
+		{
+			putchar(str[i]);
+			count++;
+		}
+	}
 	va_end(args);
 
 	return (count);
