@@ -13,7 +13,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i, count, d;
+	int i, count, d, j;
 	char *str, *s;
 
 	count = 0;
@@ -38,7 +38,25 @@ int _printf(const char *format, ...)
 					case 's':
 						{
 							s = va_arg(args, char *);
-							count = task0s(s);
+							for (j = 0; s[j] != '\0'; j++)
+							{
+								putchar(s[j]);
+								count++;
+							}
+							break;
+						}
+					case 'd':
+						{
+							d = va_arg(args, int);
+							putchar(d + '0');
+							count++;
+							break;
+						}
+					case 'i':
+						{
+							d = va_arg(args, int);
+							putchar(d + '0');
+							count++;
 							break;
 						}
 					default:
