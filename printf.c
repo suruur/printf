@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 					case 'c':
 						{
 							d = va_arg(args, int);
-							putchar(d);
+							fputc(d,stdout);
 							count++;
 							break;
 						}
