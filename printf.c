@@ -35,13 +35,6 @@ int _printf(const char *format, ...)
 							count++;
 							break;
 						}
-					case 's':
-						{
-							s = va_arg(args, char *);
-							//puts(s);
-							//count += strlen(s);
-							break;
-						}
 					default:
 						{
 							putchar(str[i]);
