@@ -48,14 +48,14 @@ int _printf(const char *format, ...)
 					case 'd':
 						{
 							d = va_arg(args, int);
-							putchar(d + '0');
+							putchar(d);
 							count++;
 							break;
 						}
 					case 'i':
 						{
 							d = va_arg(args, int);
-							putchar(d + '0');
+							putchar(d);
 							count++;
 							break;
 						}
