@@ -39,7 +39,8 @@ int _printf(const char *format, ...)
 						{
 							s = va_arg(args, char *);
 							//puts(s);
-							count += strlen(s);
+							//count += strlen(s);
+							break;
 						}
 					default:
 						{
