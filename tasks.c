@@ -3,11 +3,11 @@
 #include "main.h"
 
 /**
- * task0s - prints 
- *
- * Return: void
+ * task0s - prints
+ * @s: str
+ * Return: int
  */
-void task0s(char *s)
+int task0s(char *s)
 {
 	int i,c;
 
@@ -18,4 +18,6 @@ void task0s(char *s)
 		putchar(s[i]);
 		c++;
 	}
+
+	return (c);
 }
