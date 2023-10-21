@@ -48,20 +48,20 @@ int _printf(const char *format, ...)
 					case 'd':
 						{
 							d = va_arg(args, int);
-							putchar(d);
+							fputc(d, stdout);
 							count++;
 							break;
 						}
 					case 'i':
 						{
 							d = va_arg(args, int);
-							putchar(d);
+							fputc(d, stdout);
 							count++;
 							break;
 						}
 					default:
 						{
-							putchar(str[i]);
+							fputc(str[i], stdout);
 							count++;
 						}
 				}
