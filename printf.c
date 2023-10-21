@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 					case 's':
 						{
 							s = va_arg(args, char *);
-							puts(s);
+							task0s(s);
 							count += strlen(s);
 							break;
 						}
